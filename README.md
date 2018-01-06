@@ -8,7 +8,7 @@ Currently i have concentrated on making it work on Ubuntu since most of new linu
 
 # I don't wanna read, tell me what to do to get it ! 
 - Open a terminal 
-- Type : `wget -O - https://raw.githubusercontent.com/rebrec/raiwallet_installer/master/install.sh | sudo bash`
+- Type : `sudo wget -O - https://raw.githubusercontent.com/rebrec/raiwallet_installer/master/install.sh | sudo bash`
 - If prompted, type your user password
 - Wait until the installion is done.
 - Enjoy.
@@ -29,7 +29,7 @@ The script will :
 Simple as typing into a terminal : 
 
 ``` bash
-wget -O - https://raw.githubusercontent.com/rebrec/raiwallet_installer/master/install.sh | sudo bash
+sudo wget -O - https://raw.githubusercontent.com/rebrec/raiwallet_installer/master/install.sh | sudo bash
 ```
 You will be asked to type your user password so that the installer can do its stuff.
 
