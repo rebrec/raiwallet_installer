@@ -26,7 +26,7 @@ cat > "${DESTINATION_PATH}/${SHORTCUT_NAME}.desktop" << EOF
 Encoding=UTF-8
 Name=rai_wallet
 Comment=RaiBlocks Wallet Docker container
-Exec=/bin/bash "sg docker docker run -d -e DISPLAY=\$DISPLAY -e USER=\$(id -u) -e GROUP=\$(id -g) -v /tmp/.X11-unix/:/tmp/.X11-unix -v \$HOME/$WALLET_FOLDER_NAME:/root/$WALLET_FOLDER_NAME -ti --rm $DOCKER_IMAGE_NAME $DOCKER_RUN_FILE"
+Exec=/bin/bash "sg docker docker run -d  -p 7075:7075/udp -p 7075:7075 -p 127.0.0.1:7076:7076 -e DISPLAY=\$DISPLAY -e USER=\$(id -u) -e GROUP=\$(id -g) -v /tmp/.X11-unix/:/tmp/.X11-unix -v \$HOME/$WALLET_FOLDER_NAME:/root/$WALLET_FOLDER_NAME -ti --rm $DOCKER_IMAGE_NAME $DOCKER_RUN_FILE"
 Icon=$DESTINATION_PATH/$SHORTCUT_ICON_NAME
 Categories=Application;Cryptocurrencies;Raiblocks;Wallet
 Version=1.0
