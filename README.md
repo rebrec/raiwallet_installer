@@ -6,6 +6,13 @@ Here is an easy to use script that will install the required dependancies to run
 
 Currently i have concentrated on making it work on Ubuntu since most of new linux user will use this distribution.
 
+# I don't wanna read, tell me what to do to get it ! 
+- Open a terminal 
+- Type : `wget -O - https://raw.githubusercontent.com/rebrec/raiwallet_installer/master/install.sh | sudo bash`
+- If prompted, type your user password
+- Wait until the installion is done.
+- Enjoy.
+
 
 ## How does it work ?
 
