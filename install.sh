@@ -8,7 +8,8 @@ SHORTCUT_NAME=RaiBlocksWallet
 WALLET_FOLDER_NAME=RaiBlocks
 DOCKER_IMAGE_NAME=rebrec/rai_wallet
 DOCKER_RUN_FILE=/root/rai_wallet
-
+IMAGE_URL=https://github.com/rebrec/raiwallet_installer/raw/master/Raiblocks_Logo.png
+DESKTOP_PATH=$(xdg-user-dir DESKTOP)
 
 if [[ -z "${SUDO_USER}"  ]]; then
     echo "To work, this script need to be run using sudo : "
@@ -48,9 +49,11 @@ SHORTCUT_NAME=$SHORTCUT_NAME
 WALLET_FOLDER_NAME=$WALLET_FOLDER_NAME
 DOCKER_IMAGE_NAME=$DOCKER_IMAGE_NAME
 DOCKER_RUN_FILE=$DOCKER_RUN_FILE
+DESKTOP_PATH=$DESKTOP_PATH
 
-rm -f \$SHORTCUT_PATH/\$SHORTCUT_NAME.desktop
-rm -rf \$DESTINATION_PATH
+rm -f "\$SHORTCUT_PATH/\$SHORTCUT_NAME.desktop"
+rm -f "\$DESKTOP_PATH/\$SHORTCUT_NAME.desktop"
+rm -rf "\$DESTINATION_PATH"
 sg docker docker rmi \$DOCKER_IMAGE_NAME
 
 update-desktop-database
@@ -71,10 +74,13 @@ echo "[+] Download prebuild docker image"
 sg docker "docker pull ${DOCKER_IMAGE_NAME}"
 
 echo "[+] Copy Image to $DESTINATION_PATH"
-cp "${SCRIPT_PATH}/${SHORTCUT_ICON_NAME}" "${DESTINATION_PATH}"
+wget "${IMAGE_URL}" -P "${DESTINATION_PATH}"
+
+echo "[+] Copy the shortcut to $DESKTOP_PATH"
+cp -f "${SCRIPT_PATH}/${SHORTCUT_NAME}.desktop" "${DESKTOP_PATH}"
 
 echo "[+] Copy the shortcut to $SHORTCUT_PATH"
-cp "${SCRIPT_PATH}/${SHORTCUT_NAME}.desktop" "${SHORTCUT_PATH}"
+cp -f "${SCRIPT_PATH}/${SHORTCUT_NAME}.desktop" "${SHORTCUT_PATH}"
 
 echo "[+] Update Desktop Icons"
 update-desktop-database
