@@ -1,19 +1,9 @@
 # RaiBlocks Wallet Installer for Linux
 
 
-As asked by a friend,
-Here is an easy to use script that will install the required dependancies to run the RaiBlocks wallet under linux
+An easy to use script that will install the linux RaiBlocks wallet
 
-Currently i have concentrated on making it work on Ubuntu since most of new linux user will use this distribution.
-
-## How does it work ?
-
-The script will :
-- Install docker.io if not already installed
-- Allow your user to run it without being root
-- Add extra autorizations so that docker container can run the wallet on your X server
-- Download my prebuild docker image containing the rai_wallet (if you want to build your own, you can get my Dockerfile from its dedicated [repository](https://github.com/rebrec/raiwallet_docker_container))
-- Create a shortcut that will run the wallet within the container.
+Currently I have concentrated on making it work on Ubuntu since most of new linux user will use this distribution.
 
 
 ## How to install ?
@@ -25,7 +15,14 @@ sudo wget -O - https://raw.githubusercontent.com/rebrec/raiwallet_installer/mast
 ```
 You will be asked to type your user password so that the installer can do its stuff.
 
+## How does it work ?
 
+The script will :
+- Install docker.io if not already installed
+- Allow your user to run it without being root
+- Add extra autorizations so that docker container can run the wallet on your X server
+- Download my prebuild docker image containing the rai_wallet (if you want to build your own, you can get my Dockerfile from its dedicated [repository](https://github.com/rebrec/raiwallet_docker_container))
+- Create a shortcut that will run the wallet within the container.
 
 ## How to Use my freshly installed wallet ?
 
