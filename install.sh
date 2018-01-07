@@ -77,10 +77,10 @@ echo "[+] Copy Image to $DESTINATION_PATH"
 wget "${IMAGE_URL}" -P "${DESTINATION_PATH}"
 
 echo "[+] Copy the shortcut to $DESKTOP_PATH"
-cp -f "${SCRIPT_PATH}/${SHORTCUT_NAME}.desktop" "${DESKTOP_PATH}"
+cp -f "${DESTINATION_PATH}/${SHORTCUT_NAME}.desktop" "${DESKTOP_PATH}"
 
 echo "[+] Copy the shortcut to $SHORTCUT_PATH"
-cp -f "${SCRIPT_PATH}/${SHORTCUT_NAME}.desktop" "${SHORTCUT_PATH}"
+cp -f "${DESTINATION_PATH}/${SHORTCUT_NAME}.desktop" "${SHORTCUT_PATH}"
 
 echo "[+] Update Desktop Icons"
 update-desktop-database
