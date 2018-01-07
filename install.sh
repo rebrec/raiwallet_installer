@@ -18,7 +18,7 @@ if [[ -z "${SUDO_USER}"  ]]; then
 fi
 USER="${SUDO_USER}"
 
-mkdir -p "${$DESTINATION_PATH}"
+mkdir -p "${DESTINATION_PATH}"
 
 # Build of the shortcut
 echo "[+] Building shortcut to ${DESTINATION_PATH}/${SHORTCUT_NAME}.desktop"
